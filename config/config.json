@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "backtech",
+    "password": "backtech",
+    "database": "happyvalley_development",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "backtech",
+    "password": "backtech",
+    "database": "happyvalley_test",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "backtech",
+    "password": "backtech-h@ppyv@lley-2015",
+    "database": "happyvalley_production",
+    "host": "backtech.cloudapp.net",
+    "dialect": "postgres"
+  }
+}

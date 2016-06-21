@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/Question.css" >
+
+ 
+
+	</head>
+	<body>
+		<div id="header">
+			<h1>Menu</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+            <center>
+                <h1>こんにちは、<%= UID %> さん</h1>
+                <br />
+
+               　<!-- 腰痛タイプ判定へ　-->
+                <form method="post" action="/ExplainAlgorithm">
+                <input type="hidden" name ="explainAlgorithm_uid" value="<%=UID%>" />
+                <input type="hidden" name ="explainAlgorithm_sid" value="<%=SID%>" />
+                <input type="submit" value="腰痛タイプ判定を始める" />
+                </form>
+
+                <br />
+
+                <!--　腰痛タイプ判定結果と対策へ -->
+                <form method="post" action="/Result">
+                <input type="hidden" name ="result_uid" value="<%=UID%>" />
+                <input type="hidden" name ="result_sid" value="<%=SID%>" />
+                <input type="submit" value="腰痛タイプ判定の結果・対策" />
+                </form>
+
+                <br />
+             
+                <!-- 痛みのログ入力へ -->
+                <form method="post" action="/PainLog">
+                <input type="hidden" name ="log_uid" value="<%=UID%>" />
+                <input type="hidden" name ="log_sid" value="<%=SID%>" />
+                <input type="submit" value="痛みのログ入力" />
+                </form>
+
+                <br />
+
+                <!-- バックストーリーへ -->
+                <form method="post" action="/BackStory">
+                <input type="hidden" name ="backstory_uid" value="<%=UID%>" />
+                <input type="hidden" name ="backstory_sid" value="<%=SID%>" />
+                <input type="submit" value="バックストーリー" />
+                </form>
+
+                <br />
+
+                <!-- ログアウト -->
+                <form method="post" action="/LogOut">
+                <input type="hidden" name ="logout_uid" value="<%=UID%>" />
+                <input type="hidden" name ="logout_sid" value="<%=SID%>" />
+                <input type="submit" value="ログアウト" />
+                </form>
+
+                <br />
+                <br />
+
+                <!-- 専門家へ 
+                <form method="post" action="/SpecialistEntryPoint">
+                <input type="hidden" name ="specialistEntryPoint_uid" value="<%=UID%>" />
+                <input type="hidden" name ="specialistEntryPoint_sid" value="<%=SID%>" />
+                <input type="submit" value="専門家用アクセス用" />
+                </form>
+
+                <br />
+                -->
+
+             
+            </center>
+<!--
+            <script type="text/javascript" src="javascripts/as-jqplot/dist/jquery.min.js"></script>
+            <script type="text/javascript" src="javascripts/as-jqplot/dist/jquery.jqplot.min.js"></script>
+            <script type="text/javascript" src="javascripts/as-jqplot/dist/excanvas.min.js"></script>
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+            <script type="text/javascript" src="javascripts/as-jqplot/dist//jquery.jqplot.js"></script>
+            <script type="text/javascript" src="javascripts/as-jqplot/dist/dist/plugins/jqplot.canvasTextRenderer.js"></script>
+            <script type="text/javascript" src="javascripts/as-jqplot/dist/plugins/jqplot.canvasAxisLabelRenderer.js"></script>
+            <link rel="stylesheet" type="text/css" hrf="../node_modules/as-jqplot/dist/jquery.jqplot.css" />
+
+            <div id="chart1"></div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    var data1_ = Number(document.getElementById('data1').value);
+                    var data2_ = Number(document.getElementById('data2').value);
+                    var data3_ = Number(document.getElementById('data3').value);
+                    var data4_ = Number(document.getElementById('data4').value);
+                    var data5_ = Number(document.getElementById('data5').value);
+                    var data6_ = Number(document.getElementById('data6').value);
+                    // Use jQuery selector for a specific element ID.
+                    $('#chart1').jqplot([[data1_,data2_,data3_,data4_,data5_,data6_]]);
+                });
+            </script>
+-->
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+	</body>
+</html>

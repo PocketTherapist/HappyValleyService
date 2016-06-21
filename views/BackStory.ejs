@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/Question.css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>バックストーリー</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+
+            <div id="story">
+            <p>
+                &nbsp;&nbsp;我々BackTechは、医療の国家有識者が中心となり、腰痛で悩むすべての人々の悩みを解決するための企業です。
+                最新の科学根教に基づいた治療法やサービスを、国立大学・医学研究者・全国の選び抜かれた治療家と共に
+                提供し、あなたの腰痛の改善に向けて、全力でサポートします。<br>
+                &nbsp;&nbsp;腰痛になって、「何をすればいいかわからない」「なかなか治らない」などの、個人の悩みを解決することで、
+                社会的経済損失/機会損失の抑制、健康寿命の延伸を目指します。<br>
+                &nbsp;&nbsp;我々BackTechは、腰痛で悩んでいる個人、企業の最後の砦です。
+            </p>
+
+			</div><!-- story -->
+
+            <form class ="ToMenu"  method="post" action="/Menu">
+            <input type="hidden" name ="menu_uid" value="<%=UID%>" />
+            <input type="hidden" name ="menu_sid" value="<%=SID%>" />
+            <input type="submit" id="MenuSubmit" value="メニューへ戻る">
+            </form>
+
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+
+	</body>
+</html>

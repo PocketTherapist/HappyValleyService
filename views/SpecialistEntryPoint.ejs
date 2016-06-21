@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+  		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+   		<link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/EntryPoint.css">
+	</head>
+	<body>
+		<div id="header">
+            <h1>本パスワード登録</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+			<p>専門家があなたのデータを修正するためのものです。Loginしないでください。</p>
+            <div id="LogInContainer">
+                <center>
+                <table border="0">
+                    <form class ="SpecialistLogin"  method="post" action="/SpecialistLogin">
+                        <tr>
+                            <td>
+                                専門家パスワード
+                            </td>
+                            <td colspan="3">
+                                <input type="password" name="password" id="password" value="" size="30" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <input type="hidden" name ="specialistPassword_uid" value="<%=UID%>" />
+                                <input type="hidden" name ="specialistPassword_sid" value="<%=SID%>" />
+                                <input type="submit" id="LoginSubmit" value="専門家としてログイン" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                            <% if (LOGIN_MISS == 1){ %>
+                                <a><font color="#ff0000">パスワードが間違っています。</a>
+                            <% }else{ %>
+                                <br />
+                            <% } %>
+                            </td>
+                        </tr>
+                    </form>
+
+
+                </table>
+
+
+
+                </center>
+            </div><!-- LogInContainer -->
+
+            <form class ="LogIn"  method="get" action="/Menu">
+                <input Align="center" type="submit" id="ToEntryPoint" value="メニューへ戻る" >
+            </form>
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+	</body>
+</html>

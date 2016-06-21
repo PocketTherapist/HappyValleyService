@@ -1,0 +1,579 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <Name>HappyValleyService</Name>
+    <RootNamespace>HappyValleyService</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>ae7ffaf0-f986-43a8-8e81-d88787ea9c9e</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>bin\www</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <ProjectView>ShowAllFiles</ProjectView>
+    <NodejsPort>1337</NodejsPort>
+    <StartWebBrowser>true</StartWebBrowser>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app_http.js" />
+    <Compile Include="app.js" />
+    <Compile Include="master-loader.js" />
+    <Compile Include="master-loader-for-ut.js" />
+    <Compile Include="master-loader2.js" />
+    <Compile Include="migrations\20150712000002-modify-user-status.js" />
+    <Compile Include="migrations\20150712000001-modify-user-status.js" />
+    <Compile Include="migrations\20150706000001-modify-recipe.js" />
+    <Compile Include="migrations\20150629000001-add-recipe.js" />
+    <Compile Include="migrations\20150608000002-initial-migration.js" />
+    <Compile Include="migrations\20150824000001-add-condition-log.js" />
+    <Compile Include="migrations\20151025000001-modify-recipe.js" />
+    <Compile Include="migrations\20151012000001-modify-user.js" />
+    <Compile Include="migrations\20150824000002-modify-user-status.js" />
+    <Compile Include="models\device.js" />
+    <Compile Include="models\global-info.js" />
+    <Compile Include="models\index.js" />
+    <Compile Include="models\interview-log.js" />
+    <Compile Include="models\interview-session.js" />
+    <Compile Include="models\interview-sheet-selection.js" />
+    <Compile Include="models\interview-sheet.js" />
+    <Compile Include="models\pain-log.js" />
+    <Compile Include="models\session.js" />
+    <Compile Include="models\recipe.js" />
+    <Compile Include="models\user-status.js" />
+    <Compile Include="models\user.js" />
+    <Compile Include="orm-test.js" />
+    <Compile Include="orm.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\docs\javascript\main.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\docs\javascript\searchdata.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\colorpicker\jquery.colorpicker.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\example.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\example.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\js\jquery-ui.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\js\jquery.effects.blind.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\js\jquery.effects.core.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\kcp.print.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\pieTest2.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shAutoloader.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shAutoloader.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shBrushJScript.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shBrushJScript.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shBrushXml.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shBrushXml.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shCore.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\shCore.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\yahooData.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\examples\yahooData.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\excanvas.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\excanvas.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\jquery.jqplot.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\jquery.jqplot.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\jquery.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\jquery.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.barRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.barRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.BezierCurveRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.BezierCurveRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.blockRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.blockRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.bubbleRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.bubbleRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasAxisLabelRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasAxisLabelRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasAxisTickRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasAxisTickRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasOverlay.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasOverlay.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasTextRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.canvasTextRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.categoryAxisRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.categoryAxisRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.ciParser.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.ciParser.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.cursor.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.cursor.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.dateAxisRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.dateAxisRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.donutRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.donutRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.dragable.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.dragable.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.enhancedLegendRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.enhancedLegendRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.funnelRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.funnelRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.highlighter.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.highlighter.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.json2.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.json2.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.logAxisRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.logAxisRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.mekkoAxisRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.mekkoAxisRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.mekkoRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.mekkoRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.meterGaugeRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.meterGaugeRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.mobile.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.mobile.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.ohlcRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.ohlcRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pieRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pieRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pointLabels.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pointLabels.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pyramidAxisRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pyramidAxisRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pyramidGridRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pyramidGridRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pyramidRenderer.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.pyramidRenderer.min.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.trendline.js" />
+    <Compile Include="public\javascripts\as-jqplot\dist\plugins\jqplot.trendline.min.js" />
+    <Compile Include="routes\GlobalFunction.js" />
+    <Compile Include="routes\GetInterviewSheet.js" />
+    <Content Include="bin\www" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="routes\users.js" />
+    <Compile Include="routes_http\index.js" />
+    <Content Include="config\config.json" />
+    <Content Include="etc\ssl\server.p12" />
+    <Content Include="etc\ssl\server.pem" />
+    <Content Include="etc\ssl\serverkey.pem" />
+    <Content Include="ntvs_analysis.dat" />
+    <Content Include="package.json" />
+    <Content Include="public\images\favicon.ico" />
+    <Content Include="public\images\FigureA.png" />
+    <Content Include="public\images\FigureB.png" />
+    <Content Include="public\images\imageQ1.png" />
+    <Content Include="public\javascripts\as-jqplot\.bower.json" />
+    <Content Include="public\javascripts\as-jqplot\bower.json" />
+    <Content Include="public\javascripts\as-jqplot\dist\changes.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\copyright.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\changes-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\gpl-2-0-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\background.jpg" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\basicline.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\basiclogaxis.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\basiclogoptions.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\basicoptions.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\dualaxis.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\logo.jpg" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navdocs.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navdocsover.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navdownload.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navdownloadover.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navexamples.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navexamplesover.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navhome.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\navhomeover.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\new.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\sample3.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\images\samplesm.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-axisLabelRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-axisTickRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-canvasGridRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-core-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-divTitleRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-linearAxisRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-lineRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-markerRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-shadowRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-shapeRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-themeEngine-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqplot-toImage-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqPlotCssStyling-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\jqPlotOptions-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\MIT-LICENSE-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\optionsTutorial-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-barRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-BezierCurveRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-blockRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-bubbleRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-canvasAxisLabelRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-canvasAxisTickRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-canvasOverlay-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-categoryAxisRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-ciParser-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-cursor-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-dateAxisRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-donutRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-dragable-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-enhancedLegendRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-funnelRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-highlighter-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-logAxisRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-mekkoAxisRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-mekkoRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-meterGaugeRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-ohlcRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-pieRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-pointLabels-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-pyramidAxisRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-pyramidGridRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-pyramidRenderer-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\plugins\jqplot-trendline-js.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\files\usage-txt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Classes.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Files.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Functions.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General2.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General3.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General4.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General5.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General6.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\General7.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Hooks.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Properties.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Properties2.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Properties3.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Properties4.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Properties5.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\index\Properties6.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesA.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesD.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesG.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesH.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesJ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesL.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesS.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesSymbols.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesT.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\ClassesV.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FilesJ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsC.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsD.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsG.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsI.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsM.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsN.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsQ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsR.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsS.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\FunctionsZ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralA.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralB.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralC.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralD.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralE.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralF.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralG.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralH.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralI.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralJ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralL.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralM.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralN.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralO.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralP.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralQ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralR.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralS.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralSymbols.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralT.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralU.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralV.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralW.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralX.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralY.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\GeneralZ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\HooksA.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\HooksE.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\HooksJ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\HooksP.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\NoResults.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesA.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesB.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesC.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesD.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesE.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesF.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesG.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesH.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesI.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesL.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesM.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesN.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesO.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesP.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesR.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesS.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesT.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesU.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesV.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesW.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesX.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesY.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\search\PropertiesZ.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\styles\1.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\styles\2.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\docs\styles\main.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\ages.json" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\ajax-loader.gif" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\area.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\axisLabelsRotatedText.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\axisLabelTests.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\axisScalingForceTickAt.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\bandedLine.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\bar-charts.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\barLineAnimated.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\barTest.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\bezierCurve.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\blockPlot.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\bubble-plots.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\bubbleChart.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\candlestick-charts.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\candlestick.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\canvas-overlay.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\bar-alpha.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\bar-opacity.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\bar-pointer.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\bar.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\map-opacity.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\map-pointer.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\map.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\preview-opacity.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\ui-colorpicker.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\index.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\colorpicker\jquery.colorpicker.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\cursor-highlighter.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\customHighlighterCursorTrendline.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\dashboardWidget.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\dashedLines.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\data-renderers.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\date-axes.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\dateAxisLogAxisZooming.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\dateAxisRenderer.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\draw-rectangles.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\examples.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\examples.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\fillBetweenLines.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\hiddenPlotsInTabs.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\bar-alpha.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\bar-opacity.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\bar-pointer.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\bar.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\logo.jpg" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\map-opacity.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\map-pointer.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\map.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\preview-opacity.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\images\ui-colorpicker.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\index.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\jquery-ui.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\jquery-ui.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_diagonals-thick_18_b81900_40x40.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_diagonals-thick_20_666666_40x40.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_flat_10_000000_40x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_glass_100_f6f6f6_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_glass_100_fdf5ce_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_gloss-wave_35_f6a828_500x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_highlight-soft_100_eeeeee_1x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-bg_highlight-soft_75_ffe45c_1x100.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-icons_228ef1_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-icons_ef8c08_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-icons_ffd27a_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\jquery-ui-1.9pre.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\jquery-ui-1.9pre.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\jquery-ui.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\jquery-ui.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\jsondata.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\KCPsample4.csv" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_area.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_area2.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_cdf.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_engel.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_lorenz.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_pdf.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_pyramid.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_pyramid2.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_pyramid_by_age.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_pyramid_by_age.php" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\kcp_quintiles.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\line-charts.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\mekkoCharts.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\meterGauge.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\multipleBarColors.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\nav.inc" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\pie-donut-charts.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\pieTest.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\pieTest4.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\point-labels.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\quintiles.json" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\resizablePlot.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\rotated-tick-labels.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\rotatedTickLabelsZoom.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\selectorSyntax.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\smoothedLine.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\LGPL-LICENSE" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\MIT-LICENSE" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shCore.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shCore.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shCoreDefault.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shCoreDefault.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shThemeDefault.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shThemeDefault.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shThemejqPlot.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\shThemejqPlot.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\theming.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\topbanner.inc" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\waterfall.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\waterfall2.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\zoom1.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\zooming.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\zoomOptions.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\examples\zoomProxy.html" />
+    <Content Include="public\javascripts\as-jqplot\dist\gpl-2.0.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\jqPlotCssStyling.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\jqPlotOptions.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\jquery.jqplot.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\jquery.jqplot.min.css" />
+    <Content Include="public\javascripts\as-jqplot\dist\MIT-LICENSE.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\optionsTutorial.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\README.txt" />
+    <Content Include="public\javascripts\as-jqplot\dist\usage.txt" />
+    <Content Include="public\javascripts\as-jqplot\LICENSE" />
+    <Content Include="public\javascripts\as-jqplot\package.json" />
+    <Content Include="public\javascripts\as-jqplot\README.md" />
+    <Content Include="public\stylesheets\CommonStyle.css" />
+    <Content Include="public\stylesheets\PainLog.css" />
+    <Content Include="public\stylesheets\Question_landscape.css" />
+    <Content Include="public\stylesheets\Question_portrait.css" />
+    <Content Include="public\stylesheets\Result.css" />
+    <Content Include="public\stylesheets\Registration.css" />
+    <Content Include="public\stylesheets\style.css" />
+    <Content Include="public\stylesheets\style.styl" />
+    <Content Include="public\stylesheets\EntryPoint.css" />
+    <Content Include="public\stylesheets\Question.css" />
+    <Content Include="README.md" />
+    <Content Include="views\SpecialistEntryPoint.ejs" />
+    <Content Include="views\ExplainAlgorithm.ejs" />
+    <Content Include="views\BackStory.ejs" />
+    <Content Include="views\ChangePassword.ejs" />
+    <Content Include="views\SpecialistMenu.ejs" />
+    <Content Include="views\ReportSendMail.ejs" />
+    <Content Include="views\ForgetPassword.ejs" />
+    <Content Include="views\PainLog.ejs" />
+    <Content Include="views\CounterMeasure.ejs" />
+    <Content Include="views\Result.ejs" />
+    <Content Include="views\Registration.ejs" />
+    <Content Include="views\EntryPoint.ejs" />
+    <Content Include="views\Menu.ejs" />
+    <Content Include="views\Question.ejs" />
+    <Content Include="views_http\index.ejs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="etc\src\" />
+    <Folder Include="config\" />
+    <Folder Include="etc\ssl\" />
+    <Folder Include="migrations\" />
+    <Folder Include="models\" />
+    <Folder Include="etc\" />
+    <Folder Include="public\javascripts\as-jqplot\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\files\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\files\images\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\files\plugins\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\index\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\javascript\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\search\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\docs\styles\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\colorpicker\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\colorpicker\images\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\images\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\smoothness\images\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\css\ui-lightness\images\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\jquery-ui\js\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\scripts\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\examples\syntaxhighlighter\styles\" />
+    <Folder Include="public\javascripts\as-jqplot\dist\plugins\" />
+    <Folder Include="routes_http\" />
+    <Folder Include="views_http\" />
+    <Folder Include="public\" />
+    <Folder Include="public\images\" />
+    <Folder Include="public\javascripts\" />
+    <Folder Include="public\stylesheets\" />
+    <Folder Include="routes\" />
+    <Folder Include="views\" />
+  </ItemGroup>
+  <!-- Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them. -->
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="False" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

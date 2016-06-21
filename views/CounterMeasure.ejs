@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛タイプ判定</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+  		<link rel="stylesheet" href="stylesheets/Result.css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>対策</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+
+            <div id="result">
+                <p>あなたは、<font size="4"><b><%=RT.title%></b></font>の可能性が高いです。 </p>  
+            </div><!-- result -->
+
+
+            <a>※<%=RT.overview%> </a> 
+            <br>
+            <hr>
+
+
+			<div id="countermeasure" >
+                <center>
+                    <% if(YoutubeURL == '病院受診'){ %>
+                        <p><font size="5"><b>まずは病院に受診してください！！</b></font></p>
+                    <% } else if(YoutubeURL == ''){ %>
+                        <p><font size="5"><b>準備中</b></font></p>
+                    <% } else { %>
+                        <iframe width="80%" height ="60%"  src="https://www.youtube.com/embed/<%=YoutubeID%>?rel=0" frameborder="0" allowfullscreen></iframe>
+                        <p>見にくい場合は<A href="<%= YoutubeURL%>" TARGET="_blank">こちら</A>をクリックしてください。</p>
+                    <% } %>
+                </center>
+            </div><!-- countermeasure -->
+            <br />
+            <form class ="BackOutput" method="post" action="/Result">
+                <input type="hidden" name ="result_uid" value="<%=UID%>" />
+                <input type="hidden" name ="result_sid" value="<%=SID%>" />
+                <a><input type="submit" name="ToMenu" id ="back" value ="結果へ戻る" /></a>
+            </form>
+            <br />
+            <form class ="BackOutput" method="post" action="/Menu">
+                <input type="hidden" name ="menu_uid" value="<%=UID%>" />
+                <input type="hidden" name ="menu_sid" value="<%=SID%>" />
+                <a><input type="submit" name="ToMenu" id ="back" value ="メニューへ戻る" /></a>
+            </form>
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+
+	</body>
+</html>

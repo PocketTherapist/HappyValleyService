@@ -1,0 +1,32 @@
+{
+  "name": "as-jqplot",
+  "version": "1.0.8",
+  "description": "AS jqPlot Shim",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "_id": "as-jqplot@1.0.8",
+  "_shasum": "97061e0f32167597b87c98dfd42c93f10a2fb249",
+  "_from": "as-jqplot@",
+  "_npmVersion": "2.5.1",
+  "_nodeVersion": "0.12.0",
+  "_npmUser": {
+    "name": "ashabanov",
+    "email": "me.antony.rain@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "ashabanov",
+      "email": "me.antony.rain@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "97061e0f32167597b87c98dfd42c93f10a2fb249",
+    "tarball": "http://registry.npmjs.org/as-jqplot/-/as-jqplot-1.0.8.tgz"
+  },
+  "directories": {},
+  "_resolved": "https://registry.npmjs.org/as-jqplot/-/as-jqplot-1.0.8.tgz"
+}

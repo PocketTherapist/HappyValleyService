@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/PainLog.css" >
+	</head>
+	<body>
+		<div id="header">
+			<h1>腰痛ログ</h1>
+		</div><!-- /header -->
+            
+
+		<div id="main">
+            <h1>痛みの度合いを10段階で評価してください。</h1>
+            <h2>1:痛みを感じない　10:痛くて動けない</h2>
+
+            <table border="0">
+                <form class="pain_level" name="Select_PainLog" method="post" action="/Regist_PainLog">
+                    <tr>
+                        <th class="table_head">
+                            <p> </p>
+                        </th>
+                        <th class="table_head">
+                            <p> </p>
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="1" style="display:none" /required > 1
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="2" style="display:none" /required > 2
+                            </p>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="3" style="display:none" /required > 3
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="4" style="display:none" /required > 4
+                            </p>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="5" style="display:none" /required > 5
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="6" style="display:none" /required > 6
+                            </p>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="7" style="display:none" /required > 7
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="8" style="display:none" /required > 8
+                            </p>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="9" style="display:none" /required > 9
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                            <p class="level_select">
+                            <input type="radio" name ="PainLevel" value="10" style="display:none" /required > 10
+                            </p>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        <br />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            対策後の痛みですか？それとも対策前の痛みですか？
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>
+                            <label>
+                            <p class="before_after">
+                            <input type="radio" name ="CounterMeasure" value="true" style="display:none" /required > 対策前
+                            </p>
+                            </label>
+                        </td>
+                        <td>
+                            <label>
+                            <p class="before_after">
+                            <input type="radio" name ="CounterMeasure" value="" style="display:none" /required > 対策後
+                            </p>
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                                
+                            <input type="hidden" name ="regist_log_uid" value="<%=UID%>" />
+                            <input type="hidden" name ="regist_log_sid" value="<%=SID%>" />
+                            <p>
+                            <center>
+                            <input id="submit_button_forRegist" type="button" onclick="check();" value="記録する" >
+                            </center>
+                            </p>
+                        </td>
+                    </tr>
+
+                    </form>
+                </table>
+
+            <br />
+            <form method="post" action="/Menu">
+            <input type="hidden" name ="menu_uid" value="<%=UID%>" />
+            <input type="hidden" name ="menu_sid" value="<%=SID%>" />
+  
+            <input id="submit_button_toMenu" type="submit" value="メニューへ戻る" />
+            </form>
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+
+        <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	    <script>
+		    $(function () {
+		        $('.level_select').click(function () {
+		            $('.level_select').css('background-color', '');
+		            $(this).css('background-color', 'green');
+		        });
+		    });
+		    $(function () {
+		        $('.before_after').click(function () {
+		            $('.before_after').css('background-color', '');
+		            $(this).css('background-color', 'blue');
+		        });
+		    });
+
+		    function check() {
+		        if (document.Select_PainLog.PainLevel.value == '') {
+		            return;
+		        }
+		        if (!document.Select_PainLog.CounterMeasure[0].checked && !document.Select_PainLog.CounterMeasure[1].checked) {
+		            return;
+		        }
+		        if (document.Select_PainLog.CounterMeasure[0].checked) {
+		            for (var i = 0; i < 10; i++) {
+		                if (document.Select_PainLog.PainLevel[i].checked) {
+		                    var num = i+1
+		                    var str = "痛みのレベル：" + num + "  対策前　でいいですか？"
+		                    if (confirm(str)) {
+		                        document.Select_PainLog.submit();
+		                    }
+		                }
+		            }
+                    /*
+		            var str = "痛みのレベル：" + Number(document.Select_PainLog.PainLevel.value) + "  対策前　でいいですか？"
+		            if (confirm(str)) {
+		                document.Select_PainLog.submit();
+		            }
+                    */
+		        } else {
+		            for (var i = 0; i < 10; i++) {
+		                if (document.Select_PainLog.PainLevel[i].checked) {
+		                    var num = i + 1
+		                    var str = "痛みのレベル：" + num + "  対策後　でいいですか？"
+		                    if (confirm(str)) {
+		                        document.Select_PainLog.submit();
+		                    }
+		                }
+		            }
+                    /*
+		            var str = "痛みのレベル：" + Number(document.Select_PainLog.PainLevel.value) + "  対策後　でいいですか？"
+		            if (confirm(str)) {
+		                document.Select_PainLog.submit();
+		            }
+                    */
+                }
+		        
+		    }
+        </script>
+
+	</body>
+</html>

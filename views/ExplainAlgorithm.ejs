@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/Question.css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>腰痛タイプ判定について</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+
+            <div id="story">
+            <p>
+                この腰痛タイプ判定は、最大７問の質問に選択肢から答えて頂き、
+                みなさんの腰痛のタイプを判定します。腰痛のタイプがわかることで、
+                より最適な対策をとることが可能となります。
+                途中でやめると、それまでの解答は記録されないのでご注意ください。
+            </p>
+
+			</div><!-- story -->
+
+
+  
+            <center>
+            <form class ="LogIn"  method="post" action="/Algorithm">
+            <input type="hidden" name ="argorithm_uid" value="<%=UID%>" />
+            <input type="hidden" name ="argorithm_sid" value="<%=SID%>" />
+            <input type="submit" id="ArgorithmSubmit" value="腰痛タイプ判定へ">
+            </form>
+            <br />
+
+            </center>
+
+            <form class ="ToMenu"  method="post" action="/Menu">
+            <input type="hidden" name ="menu_uid" value="<%=UID%>" />
+            <input type="hidden" name ="menu_sid" value="<%=SID%>" />
+            <input type="submit" id="MenuSubmit" value="メニューへ戻る">
+            </form>
+
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+
+	</body>
+</html>

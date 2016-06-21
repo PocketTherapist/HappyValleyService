@@ -1,0 +1,51 @@
+﻿
+
+#question{
+    background-color: #c8c8c8;
+    padding: 1%;
+    margin : 0 10% 5%;
+    border-radius: 1px;
+    text-shadow: 0 1px 0 #000000;
+}
+
+
+#Qimage img{
+    /*float: right;*/
+    margin-left:auto;
+    height: 30%;
+    width:40%;
+
+}
+
+#choice{
+    margin-bottom: 5%;
+}
+
+.select{
+    background-color: #bdbd8f;
+    padding: 1%;
+    margin : 1% 10% 1%;
+    border-radius: 1px;
+}
+
+#back{
+    background-color: #bdbd00;
+    width : 40%;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-top : 1%;
+    padding: 1%;
+
+}
+
+#next{
+    background-color: #bdbdff;
+    width : 40%;
+    border-radius: 5px;
+    text-align: center;
+    margin: auto;
+    margin-top : 1%;
+    padding: 1%;
+}
+ 

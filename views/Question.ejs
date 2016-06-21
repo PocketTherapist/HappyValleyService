@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<!--<link rel="stylesheet" href="stylesheets/Question.css">-->
+        <link rel="stylesheet" media="all and (orientation:portrait)" href="stylesheets/Question_portrait.css"><!--縦向きでの表示 -->
+        <link rel="stylesheet" media="all and (orientation:landscape)" href="stylesheets/Question_landscape.css"><!--横向きでの表示 -->
+	</head>
+	<body>
+		<div id="header">
+			<h1>腰痛タイプ判定</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+            <div class="item_name">	<a>質問</a>	 </div>
+			
+            <div id="question">
+                <a id="Qimage"><img src= "<%= QA.FigureUrl %>" ></a> 
+                <a><%= QA.QuestionText %> </a>
+
+
+			</div><!-- question -->
+
+            <div class="item_name">	<a>選択肢</a> </div>
+			<div id="choice">
+
+                <form class ="NextOutput" method="post" action="/Next" >
+                <% for ( var i = 0; i < QA.Selections.length; i++){ %>
+                    <label>
+                    <p class="select">                   
+                        <input type="radio" name="NextSelectionId" value="<%=QA.Selections[i].SelectionId%>$<%=QA.Selections[i].NextQuestionId%>$<%=QA.Selections[i].ConditionType%>" style="display:none"/ required><%= QA.Selections[i].SelectionText %>
+                    </p>
+                    </label>
+                <% } %>
+                    <br>
+                    <input type="hidden" name="QuestionIdForNext" value="<%=QA.QuestionId%>"  />
+                    <input type="hidden" name="LogStepForNext" value="<%=QA.Step%>" />
+                    <input type="hidden" name ="next_uid" value="<%=UID%>" />
+                    <input type="hidden" name ="next_sid" value="<%=SID%>" />
+                    <input type="hidden" name ="next_qsid" value="<%=QSID%>" />
+                       
+                    <a><input type="submit" name="NextButton" id ="next" value ="次へ"" /> </a>
+                </form>
+                        
+                <form class ="BackOutput"  method="post" action="/Back"">
+                    <input type="hidden" name="BackQuestionId" value="<%=QA.PreviousQuestionId%>"/>
+                    <input type="hidden" name="QuestionIdForBack" value="<%=QA.QuestionId%>"/>
+                    <input type="hidden" name="LogStepForBack" value="<%=QA.Step%>" />
+                    <input type="hidden" name ="back_uid" value="<%=UID%>" />
+                    <input type="hidden" name ="back_sid" value="<%=SID%>" />
+                    <input type="hidden" name ="back_qsid" value="<%=QSID%>" />
+                    <a><input type="submit" name="BackButton" id ="back" value ="前の質問へ戻る" /></a>
+                </form>
+
+                    <br>
+                <form class ="ToMenu" method="post" action="/Menu">
+                    <input type="hidden" name ="menu_uid" value="<%=UID%>" />
+                    <input type="hidden" name ="menu_sid" value="<%=SID%>" />
+                    <a><input type="submit" name="ToMenu" id ="menu" value ="メニューへ戻る" /></a>
+                </form>
+
+			</div><!-- choice -->
+
+			<div id="decide">
+
+              
+			</div><!-- decide -->
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+
+	    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	    <script>
+		    $(function () {
+		        $('.select').click(function () {
+		            $('.select').css('background-color', '');
+		            $('.select').css('color', '');
+		            $(this).css('background-color', 'blue');
+		            $(this).css('color', '#ffffff');
+		        });
+		    });
+		    $(function () {
+		        $('#back').click(function(){
+
+		        });
+		    });
+		history.forward();
+        </script>
+	</body>
+</html>

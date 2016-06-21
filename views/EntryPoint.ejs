@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+  		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+   		<link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/EntryPoint.css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>ようこそ腰痛アプリへ</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+            <div id="LogInContainer">
+                <center>
+                <table border="0">
+                    <form class ="LogIn"  method="post" action="/LogIn">
+                        <tr>
+                            <td>
+                            <p>ユーザID</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <input type="text" name="user_id" value="" size="24" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <p>パスワード</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <input type="password" name="password" value="" size="24" autocomplete="on" required>
+                            </td>                        
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                            <% if (LOGIN_MISS == 1){ %>
+                                <a><font color="#ff0000">IDまたはパスワードが間違っています。</a>
+                            <% }else{ %>
+                                <br />
+                            <% } %>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="2">
+                                <input type="submit" id="LoginSubmit" value="ログイン" >
+                            </td>
+                        </tr>
+                    </form>
+
+
+                </table>
+                    <% if (FORGETPASSWORD == 1){ %>
+                    <div Align="right" id ="ForgetPassword">
+                        <form class ="ForgetPassword"  method="get" action="/ForgetPassword">
+                                <input type="submit"  value="パスワードを忘れた" />
+                        </form>
+                    </div><!-- ForgetPassword --> 
+                    <%} %>
+                </center>
+            </div><!-- LogInContainer -->
+
+
+
+            <center>
+            <div id ="RegistrationContainer">
+                <form class ="Registration"  method="get" action="/Registration">
+                        <input type="submit" id="RegistrationSubmit" value="新規登録" />
+                </form>
+            </div><!-- RegistrationContainer --> 
+            </center>
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+	</body>
+</html>

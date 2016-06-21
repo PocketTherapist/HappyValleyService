@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/Registration.css">
+	</head>
+	<body>
+		<div id="header">
+			<h1>新規登録</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+            <p><font color="#ff0000">※入力必須</font></p>
+            <table border="0">
+                <form id ="Resist" name ="Profile"  method="post" action="/Regist" >
+                    <tr>
+                        <td>
+                            氏(漢字)<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td>
+                            <input type="text" name="familyName" id="familyName" value="" size="10" required>
+                        </td>
+                        <td>
+                            名(漢字)<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td>
+                            <input type="text" name="firstName" id="firstName" value="" size="10" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            氏(カナ)
+                        </td>
+                        <td>
+                            <input type="text" name="familyName_kana" id="familyName_kana" value="" size="10">
+                        </td>
+                        <td>
+                            名(カナ)
+                        </td>
+                        <td>
+                            <input type="text" name="firstName_kana" id="firstName_kana" value="" size="10" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            性別<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td>
+                            <select name="sex" id="sex" required>
+                            <option value="1">男</option>
+                            <option value="2">女</option>
+                            </select>
+                        </td>
+                        <td>
+                            年齢<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td>
+                            <input type="text" name="age" id="age" value="" size="3" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            郵便番号<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td>
+                            <input type="text" name="PostCood" id="PostCood" value="" size="10"required>
+                        </td>
+                        <td colspan ="2">
+                            <a>ハイフンは抜いてください</a>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ID(email)<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="email" id="email" value="" size="30" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ID(確認用)<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td colspan="3">
+                            <input type="text" name="email_conf" id="email_conf" value="" size="30" required>
+                        </td>
+                    </tr>
+                    <% if (PASSWORD_SWITCH == 0){ %>
+                    <tr>
+                        <td>
+                            Password<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td colspan="3">
+                            <input type="password" name="password" id="password" value="" size="30" required>
+                        </td>
+                    </tr>
+                   <tr>
+                        <td>
+
+                        </td>
+                        <td colspan="3">
+                            <p><font color="#555555">8文字以上で入力してください。</font></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td >
+                            Password<br />(確認用)<a><font color="#ff0000">※</font></a>
+                        </td>
+                        <td colspan="3">
+                            <input type="password" name="password_conf" id="password_conf" value="" size="30" required>
+                        </td>
+                    </tr>
+                    <% } %>
+                    <tr>
+                        <td colspan="4">
+                            <% if(REGISTED_ID == 1){ %>
+                                <a><font color="#ff0000">そのIDはすでに登録されています。異なるIDで登録してください。</a>
+                            <% }else{ %>
+                                <br />
+                            <% } %>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <input type="button" onclick="check();" value="登録"  >
+                        </td>
+                    </tr>
+                </form>
+            </table>
+            <br />
+            <form id ="ToEntryPoint" name ="BackEntoryPoint"  method="get" action="/" >
+                <input type="hidden" id="passwordSwitch" value = "<%= PASSWORD_SWITCH %>" />
+                <input type="submit"  value="ログイン画面へ戻る"  >
+            </form>
+
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+
+	    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	    <script>
+	        function check() {
+
+	            var FamilyName = document.getElementById('familyName').value;
+	            if (FamilyName == '') {
+	                alert("苗字の入力は必須です。");
+	                return;
+	            }
+	            var FirstName = document.getElementById('firstName').value;
+	            if (FamilyName == '') {
+	                alert("名前の入力は必須です。");
+	                return;
+	            }
+
+	            var FamilyName_kana = document.getElementById('familyName_kana').value;
+	            //if (FamilyName_kana != '' && FamilyName_kana.match(/^[ァ-ロワヲンー]*$/)) {
+	            if (FamilyName_kana != '' && !FamilyName_kana.match(/^[\u30A0-\u30FF]+$/)) {
+	                alert("氏（カナ）にカナ以外が入力されています。");
+	                return;
+	            }
+	            var FirstName_kana = document.getElementById('firstName_kana').value;
+	            //if (FirstName_kana != '' && FirstName_kana.match(/^[ァ-ロワヲンー]*$/)) {
+	            if (FirstName_kana != '' && !FirstName_kana.match(/^[\u30A0-\u30FF]+$/)) {
+	                alert("名（カナ）にカナ以外が入力されています。");
+	                return;
+	            }
+
+
+
+	            var Age = document.getElementById('age').value;
+	            if (Age.match(/[^0-9]/) || Number(Age) < 1 || Number(Age) >100 ) {
+	                alert("年齢が1~100ではありません");
+	                return;
+	            }
+
+	            var post_cood = document.getElementById("PostCood").value;
+	            if (post_cood.indexOf("-") != -1) {
+	                alert("郵便番号にハイフン(-)が入っています。");
+	                return;
+	            }
+
+	            var mail1 = document.getElementById("email");
+	            var mail2 = document.getElementById("email_conf");                
+	            if (mail1.value != mail2.value) {
+	                alert("２つのメールアドレスが異なります。");
+	                return;
+	            }
+
+	            if (!mail1.value.match(/.+@.+\..+/)) {
+	                alert("IDがメールアドレスではありません。");
+	                return;
+	            }
+	            
+	            if (Number(document.getElementById("passwordSwitch")) == 0) {
+	                var pass1 = document.getElementById("password");
+	                var pass2 = document.getElementById("password_conf");
+
+	                if (pass1.value.length < 8) {
+	                    alert("パスワードは８文字以上にしてください。");
+	                    return;
+	                }
+
+	                if (pass1.value != pass2.value) {
+	                    alert("２つパスワードが異なります。");
+	                    return;
+	                }
+	            }
+	            document.Profile.submit();
+	        }
+
+
+
+	    </script>
+
+
+	</body>
+</html>

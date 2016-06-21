@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+  		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+   		<link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/EntryPoint.css">
+	</head>
+	<body>
+		<div id="header">
+            <h1>仮パスワード発行</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+
+
+
+            <div id="LogInContainer">
+                <center>
+
+			    <p>下記メールアドレスに仮パスワードを送信しました。</p>
+   			    <p>メールにしたがって、24時間以内に本パスワードを登録してください。</p>
+
+
+                </center>
+            </div><!-- LogInContainer -->
+
+            <center>
+                <p><%= USER_MAILADDRESS %></p>
+            </center>
+
+            <form class ="LogIn"  method="get" action="/">
+                <input Align="center" type="submit" id="ToEntryPoint" value="Login画面へ" >
+            </form>
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+	</body>
+</html>

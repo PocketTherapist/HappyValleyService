@@ -1,0 +1,40 @@
+#!/usr/bin/env node
+var debug = require('debug')('HappyValleyService');
+//var app_http = require('../app_http');
+var app_http = require('../app');
+
+
+
+app_http.set('port', process.env.PORT || 3000);
+
+var server = app_http.listen(app_http.get('port'), function() {
+  console.log('BACKTECH Public AP listening on port ' + server.address().port);
+});
+
+
+var app = require('../app');
+var https = require('https');
+var fs = require('fs');
+var url   = require('url');
+
+var privateKey  = fs.readFileSync('./etc/ssl/serverkey.pem', 'utf8');
+var certificate = fs.readFileSync('./etc/ssl/server.pem', 'utf8');
+var pfxfile = fs.readFileSync('./etc/ssl/server.p12', 'utf8');
+
+        debug('HTTPS init.');
+var options = {
+//		hostname: 'localhost',
+		key: privateKey,
+		cert: certificate,
+//		pfx: pfxfile,
+//		passphrase: 'happyvalley'
+	};
+
+var httpsServer = https.createServer(options, app);
+        debug('HTTPS initialized.');
+
+console.log('HTTPS Started.');
+
+httpsServer.listen(60443,function() {
+  console.log('Backtech APP server listening on port ' + httpsServer.address().port);
+});

@@ -1,0 +1,28 @@
+﻿
+
+#LogInContainer{
+    background-color: #bfbfff;
+    padding: 1%;
+    margin : 0 10% 5%;
+    margin-top : 10px;
+    border-radius: 5px;
+}
+
+#RegisterationContainer{
+    margin : 0 10% 5%;
+}
+
+#LoginSubmit{
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:5%;
+    border-radius: 5px;
+}
+
+#RegistrationSubmit{
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:5%;
+    border-radius: 5px;
+}
+    

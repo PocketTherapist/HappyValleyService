@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5, user-scalable=yes, initial-scale=1.0" >
+		<title>腰痛アプリ</title>
+		<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+        <link rel="stylesheet" href="stylesheets/CommonStyle.css">
+		<link rel="stylesheet" href="stylesheets/Question.css" >
+	</head>
+	<body>
+		<div id="header">
+			<h1>Menu</h1>
+		</div><!-- /header -->
+
+		<div id="main">
+            <center>
+                <h1>こんにちは、専門家 さん</h1>
+                <p>必ず、ログアウトして終わってください。</p>
+                <br />
+
+            <!--　腰痛タイプ判定へ　-->
+            <form method="post" action="/ExplainAlgorithm">
+            <input type="hidden" name ="explainAlgorithm_uid" value="<%=UID%>" />
+            <input type="hidden" name ="explainAlgorithm_sid" value="<%=SID%>" />
+            <input type="submit" value="腰痛タイプ判定結果を修正する" />
+            </form>
+
+            <br />
+
+            <!-- ログアウト -->
+            <form method="post" action="/Menu">
+            <input type="hidden" name ="logout_uid" value="<%=UID%>" />
+            <input type="hidden" name ="logout_sid" value="<%=SID%>" />
+            <input type="submit" value="ログアウト" />
+            </form>
+             
+            </center>
+
+		</div><!-- /main -->
+
+		<div id="footer">
+			<a>Copyright 2015, BackTech</a>
+		</div><!-- /footer -->
+	</body>
+</html>
